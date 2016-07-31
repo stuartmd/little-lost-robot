@@ -13,6 +13,7 @@ set(robopuzzle_SRCS
     main.cpp
     TexSupport/Image.cpp
     TexSupport/TgaReader.cpp
+    TexSupport/tga_reader.c
     AnimatedRobot.cpp
     BestCamera.cpp
     Camera.cpp
