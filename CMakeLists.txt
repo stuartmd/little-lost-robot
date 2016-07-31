@@ -8,14 +8,14 @@ add_subdirectory(src)
 
 # copy textures to the target directory
 set ( robopuzzle_TEXTURES 
-	res/textures/screen_start.TGA
-	res/textures/boxes/simple_crate.TGA
-	res/textures/boxes/unmovable_crate.TGA
-	res/textures/commands/ROBCOM_BACKWARD.TGA
-	res/textures/commands/ROBCOM_FORWARD.TGA
-	res/textures/commands/ROBCOM_GRASP.TGA
-	res/textures/commands/ROBCOM_LEFT.TGA
-	res/textures/commands/ROBCOM_RELEASE.TGA
-	res/textures/commands/ROBCOM_RIGHT.TGA )
+	res/textures/screen_start.tga
+	res/textures/boxes/simple_crate.tga
+	res/textures/boxes/unmovable_crate.tga
+	res/textures/commands/ROBCOM_BACKWARD.tga
+	res/textures/commands/ROBCOM_FORWARD.tga
+	res/textures/commands/ROBCOM_GRASP.tga
+	res/textures/commands/ROBCOM_LEFT.tga
+	res/textures/commands/ROBCOM_RELEASE.tga
+	res/textures/commands/ROBCOM_RIGHT.tga )
 	
 install (FILES ${robopuzzle_TEXTURES} DESTINATION bin)
