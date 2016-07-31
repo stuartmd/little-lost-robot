@@ -15,11 +15,9 @@ set(robopuzzle_SRCS
     TexSupport/TgaReader.cpp
     TexSupport/tga_reader.c
     AnimatedRobot.cpp
-    BestCamera.cpp
     Camera.cpp
     ChaseCamera.cpp
     Game.cpp
-    Grid.cpp
     InteractSwitch.cpp
     Level.cpp
     Level1.cpp
@@ -27,7 +25,6 @@ set(robopuzzle_SRCS
     LookAtCamera.cpp
     OverviewCamera.cpp
     Robot.cpp
-    RobotCommand.cpp
     RobotInteractObject.cpp
     RobotVisionCamera.cpp
     Scene.cpp

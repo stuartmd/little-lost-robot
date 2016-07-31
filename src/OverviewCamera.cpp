@@ -45,19 +45,7 @@ OverviewCamera::~OverviewCamera()
 {
 
 }
-/*
-bool OverviewCamera::Draw()
-{
-	
-	Level * pLevel = m_pGame->pCurrentLevel;
-	
-	Update();
-	glTranslatef(-m_pos[0], -m_pos[1], -m_pos[2]);
-	pLevel->Draw(); 
 
-	return true;
-}
-*/
 void OverviewCamera::Update()
 {
 	Level * pLevel = m_pGame->pCurrentLevel;
