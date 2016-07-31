@@ -63,11 +63,28 @@ Image::Image(int x_size, int y_size, IMAGE_TYPE type)
 
 Image::~Image()
 {
-	if (m_pImageData != NULL) 
-		delete m_pImageData;
+	if (m_pImageData != NULL) {
+	    switch( m_imageType )
+	    {
+	    case IMAGE_INT:
+		delete [] (int*) m_pImageData;
+		break;
+
+	    case IMAGE_FLOAT:
+		delete [] (float*) m_pImageData;
+		break;
+
+	    case IMAGE_BGRUCHAR:
+	    case IMAGE_RGBUCHAR:
+	    case IMAGE_RGBAUCHAR:
+		delete [] (unsigned char*) m_pImageData;
+		break;
+	    }
+	}
+		
 }
 
 void*	Image::GetImageDataPtr() const
 {
-	return m_pImageData;
+	return (void*) m_pImageData;
 }
