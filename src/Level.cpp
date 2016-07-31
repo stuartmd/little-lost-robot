@@ -392,6 +392,18 @@ bool Level::RetractArms()
 	return true;
 }
 
+bool Level::ToggleGrabber()
+{
+    if (m_pGame->theRobot.GetArmsExtended()) 
+    {
+	return RetractArms();
+    }
+    else
+    {
+	return ExtendArms();
+    }
+}
+
 bool Level::DrawRobot()
 {
 	float angle = m_oriRobot;
@@ -666,6 +678,9 @@ bool Level::ExecuteRobotCommand(eRobotCommand cmd)
 		
 	case ROBCOM_RELEASE:
 		return RetractArms();
+		
+	case ROBCOM_TOGGLE_GRABBER:
+		return ToggleGrabber();
 	}
 	return false;
 }

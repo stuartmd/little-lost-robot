@@ -38,12 +38,15 @@
 class Camera;
 
 
-enum eRobotCommand{	ROBCOM_FORWARD, 
-					ROBCOM_BACKWARD,
-					ROBCOM_LEFT,
-					ROBCOM_RIGHT,
-					ROBCOM_GRASP,
-					ROBCOM_RELEASE};
+enum eRobotCommand{
+    ROBCOM_FORWARD, 
+    ROBCOM_BACKWARD,
+    ROBCOM_LEFT,
+    ROBCOM_RIGHT,
+    ROBCOM_GRASP,
+    ROBCOM_RELEASE,
+    ROBCOM_TOGGLE_GRABBER
+};
 
 class Robot
 {

@@ -250,6 +250,9 @@ void Game::ProcessLevelKey(unsigned char nKey, int a, int b)
 	case 'g':
 		cmd = ROBCOM_GRASP;
 		break;
+	case ' ':
+		cmd = ROBCOM_TOGGLE_GRABBER;
+		break;
 	
 	default:
 		return;
@@ -415,10 +418,16 @@ void Game::DrawInstructions()
   printstring(GLUT_BITMAP_TIMES_ROMAN_24,"Left  - Turn Left");
   glRasterPos2i(60,270);
   printstring(GLUT_BITMAP_TIMES_ROMAN_24,"Right - Turn Right");
+  /*
   glRasterPos2i(60,240);
   printstring(GLUT_BITMAP_TIMES_ROMAN_24,"g     - Grab");
   glRasterPos2i(60,210);
   printstring(GLUT_BITMAP_TIMES_ROMAN_24,"r     - Release");
+  */
+  glRasterPos2i(60,240);
+  printstring(GLUT_BITMAP_TIMES_ROMAN_24,"esc   - Hint");
+  glRasterPos2i(60,210);
+  printstring(GLUT_BITMAP_TIMES_ROMAN_24,"space - Grab//Release");
   glRasterPos2i(60,180);
   printstring(GLUT_BITMAP_TIMES_ROMAN_24,"c     - Switch Camera");
 }

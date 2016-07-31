@@ -100,6 +100,7 @@ public:
 	float GetWidth();
 	virtual bool RetractArms();
 	virtual bool ExtendArms();
+	virtual bool ToggleGrabber();
 	virtual bool MoveBackward();
 	virtual bool MoveForward();
 	virtual bool TurnRight();

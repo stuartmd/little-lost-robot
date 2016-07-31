@@ -27,7 +27,6 @@ set(robopuzzle_SRCS
     Robot.cpp
     RobotInteractObject.cpp
     RobotVisionCamera.cpp
-    Scene.cpp
     SceneObject.cpp
     SimpleCrate.cpp
     SOFinish.cpp

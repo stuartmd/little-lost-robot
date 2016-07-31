@@ -16,6 +16,7 @@ set ( robopuzzle_TEXTURES
 	res/textures/commands/ROBCOM_GRASP.tga
 	res/textures/commands/ROBCOM_LEFT.tga
 	res/textures/commands/ROBCOM_RELEASE.tga
-	res/textures/commands/ROBCOM_RIGHT.tga )
+	res/textures/commands/ROBCOM_RIGHT.tga
+	res/textures/commands/ROBCOM_TOGGLE_GRABBER.tga)
 	
 install (FILES ${robopuzzle_TEXTURES} DESTINATION bin)
