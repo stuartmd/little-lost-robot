@@ -55,5 +55,4 @@ include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 
 target_link_libraries(robopuzzle ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
 
-
 install(TARGETS robopuzzle RUNTIME DESTINATION bin)
