@@ -50,7 +50,11 @@ set(robopuzzle_SRCS
     
 add_executable(robopuzzle ${robopuzzle_SRCS})
 find_package(OpenGL REQUIRED)
+
+# TODO: Add optional GLUT or FREEGLUT (or migrate to GLFW?)
 find_package(GLUT REQUIRED)
+
+
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 
 target_link_libraries(robopuzzle ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
