@@ -1,0 +1,5 @@
+set(TextureFunctions_SRCS
+    Image.cpp
+    TgaReader.cpp)
+
+add_library(TextureFunctions ${TextureFunctions_SRCS})

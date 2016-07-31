@@ -1,0 +1,27 @@
+// SOStart.cpp: implementation of the SOStart class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "SOStart.h"
+#include <GL/glut.h>
+#include "threed_objects.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+SOStart::SOStart()
+{
+
+}
+
+SOStart::~SOStart()
+{
+
+}
+
+void SOStart::Draw()
+{
+	glColor3f(0.0, 1.0, 0.0);
+	globjRectangle(5.0, 5.0);
+}
