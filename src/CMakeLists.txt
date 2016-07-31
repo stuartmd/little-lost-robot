@@ -53,7 +53,7 @@ find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 
-target_link_libraries(robopuzzle TextureFunctions ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
+target_link_libraries(robopuzzle ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
 
 
 install(TARGETS robopuzzle RUNTIME DESTINATION bin)
