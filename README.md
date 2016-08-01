@@ -27,9 +27,15 @@ The dependencies are currently:
 - OpenGL + GLUT
 
 From the root of the project folder:
+```
 mkdir build
 cd build
 cmake ../
 make
-make install 
-../bin/robopuzzle
+make install
+```
+And then, to run the program:
+```
+cd ../bin
+./robopuzzle
+```
