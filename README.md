@@ -10,7 +10,7 @@ The current code is VERY old, and was written whilst I was still studying.
 Part of the reason for uploading to GitHub was to poke myself into modernizing it and finally offering the elusive levels I promised at the end of the 2nd level.
 
 Current plans:
-- [x] ( erf...that memory error... not sure if it's 16 years old or not :P ) it was!
+- [x] Fix that awful memory error that's been hiding for 16 years :P
 - [ ] Allow various screen resolutions / fullscreen
 - [ ] Improve UX (oh goodness, why did I ever have separate buttons for "grab" and "release"...)
 - [ ] Loading levels from file
