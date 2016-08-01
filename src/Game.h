@@ -1,19 +1,19 @@
 // Game.h: interface for the Game class.
 //
 // MIT License
-// 
+//
 // Copyright (c) [2016] [Stuart McDonald Dickson]
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -60,13 +60,13 @@ enum eGameMode{ GM_START,
 				GM_PLAY,
 				GM_FINISH };
 
-class Game  
+class Game
 {
-	
+
 public:
 	void reshape();
 	void DrawInstructionCache();
-	void reshape(int x, int y);	
+	void reshape(int x, int y);
 
 	bool SolveLevel();
 	void LevelProcessSpecialKey(int key, int x, int y);
@@ -76,7 +76,7 @@ public:
 
 	bool NextLevel();
 	bool Draw();
-	
+
 	void keyboard( unsigned char nKey, int a, int b);
 	void Start();
 	Game();
@@ -117,6 +117,6 @@ protected:
 	TextureManager*		pTextureManager;
 
 	eGameMode	m_eGameMode;
-};	
+};
 
 #endif // !defined(AFX_GAME_H__11ECC222_2948_11D4_95D9_907E51C10700__INCLUDED_)

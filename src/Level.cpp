@@ -37,6 +37,9 @@ Level::~Level()
         delete m_pSceneObjects[i];
         m_pSceneObjects[i] = 0;
     }
+    
+    if (m_pSceneObjects)
+        delete [] m_pSceneObjects;
 
     for (i = 0; i < m_nNumInteractObjects; i++) {
         delete m_pInteractObjects[i];

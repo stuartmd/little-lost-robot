@@ -69,6 +69,8 @@ void init(void)
     pTheTextureManager->NewTexture(110, "unmovable_crate.tga");
     pTheTextureManager->SetCurrentTexture(-1);
 
+    theGame.Start();
+
 }
 
 /* This is the designated display function. All commands which actually

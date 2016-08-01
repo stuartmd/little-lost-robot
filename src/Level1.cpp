@@ -53,7 +53,7 @@ Level1::Level1(Game* pGame) : Level(pGame)
     m_nXsize = 9;
     m_nYsize = 9;
 
-    m_pSceneObjects = new SceneObject*[ m_nNumSceneObjects = 7 ];
+    m_pSceneObjects = new SceneObject*[ m_nNumSceneObjects = 8 ];
     m_pInteractObjects = new RobotInteractObject*[ m_nNumInteractObjects = 1 ];
 
 

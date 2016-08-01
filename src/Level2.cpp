@@ -57,8 +57,8 @@ Level2::Level2(Game* pGame) : Level(pGame)
     m_nXsize = 8;
     m_nYsize = 8;
 
-    m_pSolution = new eRobotCommand[53];
-
+    m_nSolutionSteps = 53;
+    m_pSolution = new eRobotCommand[m_nSolutionSteps];
     m_pSolution[0] = ROBCOM_LEFT;
     m_pSolution[1] = ROBCOM_FORWARD;
     m_pSolution[2] = ROBCOM_FORWARD;
@@ -112,11 +112,10 @@ Level2::Level2(Game* pGame) : Level(pGame)
     m_pSolution[50] = ROBCOM_FORWARD;
     m_pSolution[51] = ROBCOM_FORWARD;
     m_pSolution[52] = ROBCOM_FORWARD;
-    m_nSolutionSteps = 53;
 
 
-    m_pSceneObjects = new SceneObject*[16];
-    m_nNumSceneObjects = 7;
+    m_nNumSceneObjects = 16;
+    m_pSceneObjects = new SceneObject*[m_nNumSceneObjects];
 
     m_pInteractObjects = new RobotInteractObject*[3];
     m_nNumInteractObjects = 3;

@@ -45,8 +45,9 @@ Game::Game()
     theRobot.SetGame(this);
     pLevels[0] = new Level1(this);
     pLevels[1] = new Level2(this);
+
     m_nNumLevels = 2;
-    m_nLevelIndex = 0;
+    m_nLevelIndex = -1;
     pCurrentLevel = pLevels[m_nLevelIndex];
 
     m_pvCameras = new Camera*[m_nNumCameras = 3];
@@ -95,6 +96,7 @@ Game::~Game()
 
 void Game::Start()
 {
+    NextLevel();
 
 }
 
@@ -190,12 +192,11 @@ bool Game::NextLevel()
 {
     m_lastCmd = -1;
     m_InstructionCache.clear();
-    if (m_nLevelIndex++ < m_nNumLevels) {
+    if (++m_nLevelIndex < m_nNumLevels) {
         m_bShowLevelDetails = true;
         pCurrentLevel = pLevels[m_nLevelIndex];
         glutPostRedisplay();
     } else {
-        pCurrentLevel = pLevels[m_nLevelIndex = 0];
         m_eGameMode = GM_FINISH;
     }
 
@@ -519,7 +520,6 @@ void Game::DrawLevelDetails()
         glColor3f(1.0, 0.0, 0.0);
         glRasterPos2i(60, 390);
         printstring(GLUT_BITMAP_TIMES_ROMAN_24, pCurrentLevel->GetName());
-
 
         glColor3f(1.0, 1.0, 1.0);
         glRasterPos2i(60, 340);
