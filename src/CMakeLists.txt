@@ -13,7 +13,6 @@ set(robopuzzle_SRCS
     main.cpp
     TexSupport/Image.cpp
     TexSupport/TgaReader.cpp
-    TexSupport/tga_reader.c
     AnimatedRobot.cpp
     BestCamera.cpp
     Camera.cpp
@@ -48,7 +47,7 @@ set(robopuzzle_SRCS
     threed_objects.cpp
     TransitionCamera.cpp
     UnmovableCrate.cpp)
-    
+
 add_executable(robopuzzle ${robopuzzle_SRCS})
 find_package(OpenGL REQUIRED)
 
