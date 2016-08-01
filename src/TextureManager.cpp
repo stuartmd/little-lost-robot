@@ -98,9 +98,9 @@ bool TextureManager::NewTexture(int nKey, const char* szFilename)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB,
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
                      pImage->GetWidth(), pImage->GetHeight(), 0,
-                     GL_RGB, GL_UNSIGNED_BYTE,
+                     GL_RGBA, GL_UNSIGNED_BYTE,
                      pImage->GetImageDataPtr());
         delete pImage;
 

@@ -54,7 +54,7 @@ Image::Image(int x_size, int y_size, IMAGE_TYPE type)
         break;
 
         //case IMAGE_BGRAUCHAR:
-    case IMAGE_RGBAUCHAR:
+    case IMAGE_ABGRUCHAR:
         m_pImageData = (void*) new unsigned char[x_size * y_size * 4];
         break;
     }
@@ -74,7 +74,7 @@ Image::~Image()
 
         case IMAGE_BGRUCHAR:
         case IMAGE_RGBUCHAR:
-        case IMAGE_RGBAUCHAR:
+        case IMAGE_ABGRUCHAR:
             delete [](unsigned char*) m_pImageData;
             break;
         }

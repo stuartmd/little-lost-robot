@@ -37,7 +37,7 @@ Image* TgaReader::LoadFile(const char* szFilename)
         int height = tgaGetHeight(buffer);
 
         if (pixels) {
-            pImage = new Image(width, height, IMAGE_RGBAUCHAR);
+            pImage = new Image(width, height, IMAGE_ABGRUCHAR);
             memcpy(pImage->GetImageDataPtr(), pixels, width * height * 4);
             tgaFree(pixels);
         }
