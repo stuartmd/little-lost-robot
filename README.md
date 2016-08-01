@@ -10,14 +10,14 @@ The current code is VERY old, and was written whilst I was still studying.
 Part of the reason for uploading to GitHub was to poke myself into modernizing it and finally offering the elusive levels I promised at the end of the 2nd level.
 
 Current plans:
-- ( erf...that memory error... not sure if it's 16 years old or not :P )
-- Allow various screen resolutions / fullscreen
-- Improve UX (oh goodness, why did I ever have separate buttons for "grab" and "release"...)
-- Loading levels from file
-- Modernize codebase (newer C++ features and patterns, OpenGL is really unoptimised)
-- Add support for FreeGLUT/GLFW (perhaps)
-- Test cross platform
-- Llamas!
+- [x] ( erf...that memory error... not sure if it's 16 years old or not :P ) it was!
+- [ ] Allow various screen resolutions / fullscreen
+- [ ] Improve UX (oh goodness, why did I ever have separate buttons for "grab" and "release"...)
+- [ ] Loading levels from file
+- [ ] Modernize codebase (newer C++ features and patterns, OpenGL is really unoptimised)
+- [ ] Add support for FreeGLUT/GLFW (perhaps)
+- [ ] Test cross platform
+- [ ] Llamas!
 
 # Compiling
 The original code was developed in Windows using Visual C++ 6.0, but the current version has been tested to build and run under linux.
