@@ -30,6 +30,9 @@
 #include "Level1.h"
 #include "TextureManager.h"
 
+#include <sys/time.h>
+#include <cstring>
+
 /* Initialisation function */
 
 TextureManager* pTheTextureManager;
@@ -73,12 +76,79 @@ void init(void)
 
 }
 
+void printstring(void* font, const char* string)
+{
+    int len, i;
+
+    len = (int)strlen(string);
+    for (i = 0; i < len; i++)
+        glutBitmapCharacter(font, string[i]);
+}
+
+void drawFps(float fps) {
+    char fpsString[12];
+
+    sprintf(fpsString, "FPS: %.1f", fps);
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
+    glPushMatrix();
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_ALPHA_TEST);
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_FOG);
+    glDisable(GL_LIGHTING);
+
+    // Draw HUD with help/author notice
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(-0.5, 639.5, -0.5, 479.5, -1.0, 1.0);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+
+    glColor3f(1.0, 0.0, 0.0);
+    glRasterPos2i(30, 450);
+    printstring(GLUT_BITMAP_TIMES_ROMAN_24, fpsString);
+
+    glPopMatrix();
+    glPopAttrib();
+}
+
+double getTimeOfDayInMs() {
+    static struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return 1000.0 * tv.tv_sec + tv.tv_usec/ 1000.0;
+
+}
+
 /* This is the designated display function. All commands which actually
    specify something to be drawn should be in this function, or in
    function call from this function. */
 
 void display(void)
 {
+    static double lastTime = -1.0f;
+    static double currentTime = -1.0f;
+    static int nFrames = 0;
+    static float fps = 0.0f;
+    static double timeDiff = 0.0f;
+
+    if (lastTime != -1.0) {
+        nFrames++;
+        currentTime = getTimeOfDayInMs();
+        timeDiff = currentTime - lastTime;
+        // Update every second
+        if ( timeDiff >= 1000 ){
+            // printf and reset timer
+            fps = ((float) nFrames) / (timeDiff/1000.0);
+            nFrames = 0;
+            lastTime = currentTime;
+        }
+    } else {
+        lastTime = getTimeOfDayInMs();
+    }
+
+
     /* Work with model-view matrix */
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
@@ -98,7 +168,7 @@ void display(void)
 
     /* Set model-view matrix to the identity matrix */
     theGame.Draw();
-
+    drawFps(fps);
     glFlush();
     glutSwapBuffers();
     glutPostRedisplay();
